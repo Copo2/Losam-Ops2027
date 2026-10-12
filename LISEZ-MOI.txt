@@ -1,0 +1,13 @@
+Page "Future of Ops 2027" - mise en ligne sur losam.fr
+
+1. Copier le dossier losam-ops-2027 tel quel sur le serveur (ex. https://losam.fr/ops-2027/).
+   Garder index.html et le dossier files/ au même niveau : tous les liens sont relatifs.
+2. Aucune base de données ni script serveur : ce sont des fichiers statiques.
+3. Lien en anglais : ajouter #en à la fin de l'adresse (ex. https://losam.fr/ops-2027/#en).
+4. Statistiques (facultatif) : coller le code Google Analytics / Matomo du site juste avant </head> dans index.html.
+
+Mettre à jour un contenu
+- Slides : remplacer les images files/<Evenement>/s-1.jpg ... s-7.jpg (FR) et files/en/<Evenement>/ (EN), 1600 px de large.
+- PDF : remplacer files/Future-of-<Evenement>-2027.pdf (FR) et files/en/Future-of-<Evenement>-2027-EN.pdf (EN).
+- Listes d'inscrits : déposer les .xlsx dans files/lists/ puis renseigner le champ "inscrits" de l'événement
+  dans le bloc CONFIGURATION en haut de index.html (une version fr et une version en).
