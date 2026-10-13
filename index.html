@@ -260,8 +260,7 @@ body { margin: 0; background: #FFFFFF; color: #222222; }
       format: { fr: 'Summit', en: 'Summit' },
       cible: { chiffre: '200',
         unite: { fr: 'décideurs Achats', en: 'procurement decision makers' },
-        roles: { fr: ['Directeurs et leaders achats', '+500 directions achats / an', 'Dîner VIP limité à 25 invités'],
-                 en: ['Procurement directors and leaders', '500+ procurement teams a year', 'VIP dinner limited to 25 guests'] } },
+        roles: { fr: [], en: [] } },
       inscrits: null, deck: deck('Procurement', 'Future-of-Procurement-2027') },
     { id: 'p2p', nom: 'Future of P2P', date: '2027-09-21', lieu: 'Four Seasons George V, Paris',
       format: { fr: 'Dîner-débat', en: 'Dinner debate' },
@@ -485,7 +484,7 @@ body { margin: 0; background: #FFFFFF; color: #222222; }
         <dl class="lo-facts">
           <dt>${esc(T.date)}</dt><dd>${esc(cap(fLong().format(d)))}</dd>
           <dt>${esc(T.venue)}</dt><dd>${esc(e.lieu)}</dd>
-          <dt>${esc(T.targetDt)}</dt><dd>${esc(e.cible.chiffre + ' ' + e.cible.unite[lang])} : ${esc(e.cible.roles[lang].join(', '))}</dd>
+          <dt>${esc(T.targetDt)}</dt><dd>${esc(e.cible.chiffre + ' ' + e.cible.unite[lang])}${e.cible.roles[lang].length ? ' : ' + esc(e.cible.roles[lang].join(', ')) : ''}</dd>
         </dl>
       </div>
       <div class="lo-actions">
@@ -501,7 +500,7 @@ body { margin: 0; background: #FFFFFF; color: #222222; }
           </div>
         </div>
       </div>`;
-    if (lang === 'en') panel.querySelector('.lo-facts dd:last-child').innerHTML = `${esc(e.cible.chiffre + ' ' + e.cible.unite.en)}: ${esc(e.cible.roles.en.join(', '))}`;
+    if (lang === 'en') panel.querySelector('.lo-facts dd:last-child').innerHTML = `${esc(e.cible.chiffre + ' ' + e.cible.unite.en)}${e.cible.roles.en.length ? ': ' + esc(e.cible.roles.en.join(', ')) : ''}`;
     panel.querySelector('[data-act="list"]').addEventListener('click', () => downloadList(e.inscrits));
     panel.querySelector('[data-act="view"]').addEventListener('click', () => viewer(e));
     const pdf = panel.querySelector('[data-act="pdf"]');
